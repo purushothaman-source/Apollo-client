@@ -1,0 +1,7 @@
+query GetTasks($id: ID) {
+  tasks(id: $id) @rest(type: "Task", path: "tasks/{args.id)") {
+    id
+    name
+    color
+  }
+}

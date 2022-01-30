@@ -1,0 +1,11 @@
+mutation UpdateTask($subject_id: ID!, $body: String!) {
+  updateTask(subject_id: $subject_id, body: $body)
+    @rest(
+      type: "Task"
+      path: "tasks/{args.subject_id}"
+      method: "POST"
+      bodyKey: "body"
+    ) {
+    id
+  }
+}
